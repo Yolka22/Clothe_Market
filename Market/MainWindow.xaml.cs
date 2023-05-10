@@ -46,7 +46,12 @@ namespace Market
 
         private void Decline_Click(object sender, RoutedEventArgs e)
         {
-            basket.Items.RemoveAt(basket.SelectedIndex);
+
+            if (basket.SelectedIndex!=-1)
+            {
+                basket.Items.RemoveAt(basket.SelectedIndex);
+            }
+            
         }
     }
 }
