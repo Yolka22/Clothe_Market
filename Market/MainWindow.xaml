@@ -1,0 +1,46 @@
+﻿<Window x:Class="Market.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Market"
+        mc:Ignorable="d"
+        Title="Магазин одежды" Height="450" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+
+            <StackPanel>
+                <Label>Список товаров</Label>
+                <ListBox  SelectionChanged="stufPicked"  Grid.Column="0" x:Name="stufListBox" ItemsSource="{Binding Stuf}" />
+            </StackPanel>
+            <StackPanel>
+                <Label>Список белых товаров</Label>
+                <ListBox  SelectionChanged="WhitestufPicked"  Grid.Column="0" x:Name="WhitestufListBox" ItemsSource="{Binding WhiteStuf}" />
+            </StackPanel>
+            <StackPanel>
+                <Label>Список Голубых товаров</Label>
+                <ListBox  SelectionChanged="BluestufPicked"  Grid.Column="0" x:Name="BluestufListBox" ItemsSource="{Binding BlueStuf}" />
+            </StackPanel>
+            
+            
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+
+            <Label>Корзина</Label> 
+            <ListBox x:Name="basket" />
+            <Button Click="Decline_Click">Отменить</Button>
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
